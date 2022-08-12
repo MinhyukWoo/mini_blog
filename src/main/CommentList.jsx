@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import Comment from "../utils/Comment";
 import useCounter from "./useCounter";
+import CommentForm from "../utils/CommentForm";
 
 const defaultCommentProps = [
   {
@@ -28,36 +29,27 @@ const defaultCommentProps = [
 ];
 
 function CommentList(props) {
-  const [commentProps, setCommentProps] = useState([]);
-  const [length, increaseLength, decreaseLength] = useCounter(
-    1,
-    defaultCommentProps.length
-  );
+  const [commentProps, setCommentProps] = useState(defaultCommentProps);
 
-  useEffect(() => {
-    console.log(length);
-    if (length <= defaultCommentProps.length) {
-      setCommentProps(defaultCommentProps.slice(0, length));
-    }
-  }, [length]);
+  function addComment(author, comment) {
+    setCommentProps([... commentProps, {name: author, content: comment}]);
+  }
+
+  const comments = commentProps.map((commentProp, index) => {
+    return (
+      <Comment
+        key={index}
+        img_src="https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png"
+        name={commentProp.name}
+        content={commentProp.content}
+      ></Comment>
+    );
+  });
 
   return (
     <div>
-      <div>
-        <button onClick={decreaseLength}>이전</button>
-        <button onClick={increaseLength}>다음</button>
-      </div>
-      <div>
-        {commentProps.map((commentProp) => {
-          return (
-            <Comment
-              img_src="https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png"
-              name={commentProp.name}
-              content={commentProp.content}
-            ></Comment>
-          );
-        })}
-      </div>
+      <div>{comments}</div>
+      <CommentForm onCommentSubmit={addComment}></CommentForm>
     </div>
   );
 }
