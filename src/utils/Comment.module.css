@@ -22,11 +22,18 @@
 
 .NameText {
   color: black;
-  font-size: 16pt;
+  font-size: 11pt;
   font-weight: bold;
 }
 
 .CommentText {
   color: black;
-  font-size: 16pt;
+  font-size: 11pt;
+  line-height: 150%;
+}
+
+.TimeText{
+  color: dimgrey;
+  font-size: 9pt;
+  line-height: 150%;
 }

@@ -1,0 +1,6 @@
+.Main {
+  width: 860px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0%);
+}
