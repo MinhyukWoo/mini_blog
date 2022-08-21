@@ -1,9 +1,9 @@
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
-import Comment from "../utils/Comment";
-import useCounter from "./useCounter";
-import CommentForm from "../utils/CommentForm";
+import Comment from "./Comment";
+import useCounter from "../main/useCounter";
+import CommentForm from "./CommentForm";
 
 const defaultCommentProps = [
   {
