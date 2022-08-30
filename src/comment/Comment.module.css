@@ -24,12 +24,14 @@
   color: black;
   font-size: 11pt;
   font-weight: bold;
+  white-space: pre-wrap;
 }
 
 .CommentText {
   color: black;
   font-size: 11pt;
   line-height: 150%;
+  white-space: pre-wrap;
 }
 
 .TimeText{
