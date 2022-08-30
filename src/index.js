@@ -4,12 +4,15 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Main from './main/Main';
+import ArticleView from './main/ArticleView';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
   <React.StrictMode>
-    <Main></Main>
+    <App></App>
+    {/* <Main></Main> */}
+    {/* <ArticleView></ArticleView> */}
   </React.StrictMode>
 );
 
